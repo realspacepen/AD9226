@@ -53,8 +53,10 @@ void AD9226_GPIO_config(void)
 
 float Get_AD9226_value()
 {
-	
-			if(AD0_bit_0)//two's complement output,when Voltage is lower than Vref(2V),bit0 will set 1
+	//two's complement output,when Voltage is lower than Vref(2V),bit0 will set 1!!!!!!
+	//input span:1~3v,differential input,
+	//with front circuit,+-5V input is available,Vin(adc)=Vanalog_in*0.2+5
+			if(AD0_bit_0)
 		{
 			AD_tmp1=(
 			(0x00<<15)|(0x00<<14)|(0x00<<13)|(0x00<<12)
